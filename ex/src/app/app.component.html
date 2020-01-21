@@ -1,0 +1,46 @@
+<h1 style="text-align: center;"> My Little Website :) </h1>
+<div *ngIf="islogged == false">
+  <app-login (onchange)="connect($event)"></app-login>
+</div>
+<div *ngIf="islogged == true">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-9">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" routerLink="/accueil">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/formulaire">Formulaire</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/presentation">Présentation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/service">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <form class="form-inline" action="/action_page.php">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-success" type="submit">Search</button>
+        <button type="button" (click)="deconnecter()"class="btn btn-primary btn-lg active">Déconnecter</button>
+      </form>
+
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div>
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+  <div class="container text-center">
+    <small>Copyright &copy; My Website</small>
+  </div>
+</footer>
